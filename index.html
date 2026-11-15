@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Son to Son — Indie Game Studio</title>
+  <meta name="description" content="Son to Son은 픽셀 게임을 만드는 1인 인디 게임 스튜디오입니다. Infinite Dyno 개발 중.">
+  <meta property="og:title" content="Son to Son — Indie Game Studio">
+  <meta property="og:description" content="손에서 손으로, 오래 즐길 수 있는 작은 게임을 만듭니다.">
+  <meta property="og:image" content="assets/header-web.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="./"><img src="assets/favicon.png" alt=""><span>Son to Son</span></a>
+    <nav>
+      <a href="#games"><span class="ko">게임</span><span class="en">Games</span></a>
+      <a class="hide-m" href="#about"><span class="ko">소개</span><span class="en">About</span></a>
+      <a href="#contact"><span class="ko">문의</span><span class="en">Contact</span></a>
+      <a href="privacy.html"><span class="ko">개인정보처리방침</span><span class="en">Privacy</span></a>
+      <button class="lang" type="button" onclick="toggleLang()"><span class="ko">EN</span><span class="en">한국어</span></button>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="assets/header-web.png" alt="Son to Son — Indie Game Studio">
+  </div>
+
+  <main>
+    <section id="games">
+      <h2><span class="ko">게임</span><span class="en">Games</span></h2>
+      <div class="panel game">
+        <!-- 게임 아이콘이 생기면 아래 div를 <img class="thumb" src="assets/infinite-dyno-icon.png" alt="Infinite Dyno"> 로 바꾸세요 -->
+        <div class="thumb">ID</div>
+        <div>
+          <h3>Infinite Dyno</h3>
+          <div class="tags">
+            <span class="tag soon"><span class="ko">출시 준비 중</span><span class="en">Coming soon</span></span>
+            <span class="tag"><span class="ko">방치형</span><span class="en">Idle</span></span>
+            <span class="tag"><span class="ko">머지</span><span class="en">Merge</span></span>
+            <span class="tag"><span class="ko">픽셀아트</span><span class="en">Pixel art</span></span>
+          </div>
+          <p class="ko">클라이머들을 합쳐서 더 강한 클라이머로 키우고, 끝없이 위로 올라가는 픽셀 방치형 머지 게임입니다. 손을 놓고 있어도 클라이머들은 계속 벽을 오릅니다.</p>
+          <p class="en">An idle merge game in pixel art. Merge climbers into stronger ones and keep climbing an endless wall — even while you're away.</p>
+          <div class="btns">
+            <!-- 출시 후 href를 실제 스토어 주소로 바꾸고 disabled 클래스를 지우세요 -->
+            <a class="btn disabled" href="#">Google Play</a>
+            <a class="btn ghost" href="privacy.html"><span class="ko">개인정보처리방침</span><span class="en">Privacy policy</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2><span class="ko">Son to Son 소개</span><span class="en">About Son to Son</span></h2>
+      <div class="panel">
+        <p class="ko">Son to Son은 한국의 1인 인디 게임 스튜디오입니다. 이름은 ‘손(hand)에서 손으로’라는 뜻이에요. 손에 쥐고 가볍게, 그런데 오래 즐길 수 있는 픽셀 게임을 만듭니다.</p>
+        <p class="en">Son to Son is a one-person indie game studio from Korea. “Son” means “hand” in Korean, so the name reads “hand to hand.” We make small pixel games you can pick up anytime and keep coming back to.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><span class="ko">문의</span><span class="en">Contact</span></h2>
+      <div class="panel">
+        <p class="ko">버그 제보, 결제 문의, 제휴 제안 모두 이메일로 보내 주세요.</p>
+        <p class="en">For bug reports, purchase issues or business inquiries, please email us.</p>
+        <div class="btns"><a class="btn" href="mailto:snflajtwlek@gmail.com">snflajtwlek@gmail.com</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Son to Son. All rights reserved.</div>
+    <!-- 사업자등록번호를 받으면 아래 510-38-02662 를 바꾸세요 -->
+    <div class="biz">상호: Son to Son · 대표: 손누리 · 사업자등록번호: 510-38-02662 · <a href="privacy.html">개인정보처리방침</a></div>
+  </footer>
+
+  <script>
+    function setLang(l) {
+      document.body.classList.toggle('en', l === 'en');
+      document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) {}
+    }
+    function toggleLang() { setLang(document.body.classList.contains('en') ? 'ko' : 'en'); }
+    (function () {
+      var l = null;
+      try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (!l) l = (navigator.language || 'ko').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en';
+      setLang(l);
+    })();
+  </script>
+</body>
+</html>
